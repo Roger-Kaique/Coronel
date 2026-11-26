@@ -1,17 +1,10 @@
 import Image from "next/image";
 import { serviceCategories } from "@/data/services";
+import { ArrowUpRightIcon, SparkleIcon, WhatsAppIcon } from "@/components/icons";
 
 const WHATSAPP_NUMBER = "5531988624168";
 const MONTHLY_MESSAGE =
   "Olá! Vim pelo site da Coronel do Corte e gostaria de saber mais sobre o plano mensal.";
-
-function WhatsAppIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6a11.8 11.8 0 0 0 14-18.4ZM12 21a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.5.9.9-3.4-.2-.4A9.8 9.8 0 1 1 12 21Zm5.4-7.3c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2c-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.6l-.9-2.2c-.2-.6-.5-.5-.7-.5H7.4c-.3 0-.6.1-.9.4-1 1-1.4 2.2-.8 3.7 1.5 3.8 4.3 6.2 8.3 7.5 2.2.7 3.7.6 5-.1.7-.5 1.2-1.5 1.4-2.1.2-.6.2-1.1.1-1.2s-.3-.3-.6-.4Z" />
-    </svg>
-  );
-}
 
 function AppointmentLink({ serviceName }: { serviceName: string }) {
   const message = `Olá! Gostaria de agendar o serviço de ${serviceName} na Coronel do Corte.`;
@@ -56,7 +49,7 @@ export function CommercialSections() {
             <div className="monthly-card">
               <div className="monthly-card__topline">
                 <span>PLANO</span>
-                <span className="monthly-card__ornament" aria-hidden="true">✳</span>
+                <SparkleIcon className="monthly-card__ornament" />
                 <span>01 / CORONEL</span>
               </div>
               <h3 className="monthly-card__name">Mensal Coronel</h3>
@@ -69,7 +62,7 @@ export function CommercialSections() {
                 <span><strong>Cortes ilimitados</strong><small>De segunda a sexta-feira</small></span>
               </div>
               <a className="monthly-card__button" href={monthlyUrl} target="_blank" rel="noreferrer">
-                QUERO MEU MENSAL <span aria-hidden="true">↗</span>
+                QUERO MEU MENSAL <ArrowUpRightIcon className="monthly-card__arrow" />
               </a>
             </div>
           </div>
@@ -90,7 +83,7 @@ export function CommercialSections() {
                 <span className="service-category__index">0{index + 1}</span>
                 <h3>{category.name}</h3>
                 <span className="service-category__rule" />
-                <span className="service-category__mark" aria-hidden="true">✳</span>
+                <SparkleIcon className="service-category__mark" />
               </div>
 
               {category.services.length ? (

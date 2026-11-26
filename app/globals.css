@@ -42,10 +42,11 @@ button { font: inherit; }
 .site-nav > a:not(.site-nav__booking) { display: inline-flex; min-height: 44px; align-items: center; }
 .site-nav > a:not(.site-nav__booking), .hero__foot > a { transition: color .25s ease; }
 .site-nav > a:not(.site-nav__booking):hover, .hero__foot > a:hover { color: var(--gold-bright); }
-.site-nav__arrow { color: var(--gold); margin-left: 3px; }
+.site-nav__arrow { width: 14px; height: 14px; color: var(--gold); margin-left: 3px; }
+.site-nav__instagram { width: 14px; height: 14px; margin-right: 5px; }
 .site-nav__booking { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; padding: 0 17px; border: 1px solid rgba(201,160,68,.58); color: var(--gold-bright); transition: background .25s ease, color .25s ease; }
 .site-nav__booking:hover { background: var(--gold); color: var(--black); }
-.site-nav__booking span { font-size: 15px; }
+.site-nav__booking-icon { width: 15px; height: 15px; }
 .menu-toggle { display: none; }
 
 .hero { position: relative; min-height: min(850px, 100svh); min-height: max(690px, 100svh); overflow: hidden; isolation: isolate; display: flex; align-items: center; padding: 125px 12.5% 120px; }
@@ -63,14 +64,16 @@ button { font: inherit; }
 .button:hover { transform: translateY(-2px); box-shadow: 0 9px 26px rgba(201,160,68,.19); }
 .button--gold { background: linear-gradient(120deg, #b6925c, #d5b77d); color: #11100d; }
 .button--gold:hover { background: #e2c995; }
-.button--gold span { font-size: 16px; }
+.button__arrow { width: 16px; height: 16px; }
 .hero__secondary { display: inline-flex; min-height: 44px; align-items: center; gap: 13px; color: rgba(241,238,232,.79); font-size: 10px; transition: color .2s ease; }
 .hero__secondary:hover { color: var(--gold-bright); }
-.hero__secondary span { color: var(--gold); font-size: 15px; }
+.hero__secondary-icon { width: 15px; height: 15px; color: var(--gold); }
 .hero__foot { position: absolute; left: 7.05%; right: 7.05%; bottom: 32px; display: flex; align-items: center; justify-content: space-between; color: rgba(241,238,232,.58); font-size: 8px; letter-spacing: .19em; }
 .hero__qualities { display: inline-flex; align-items: center; gap: 11px; }
 .hero__pin { width: 7px; height: 7px; border: 1px solid var(--gold); border-radius: 50%; box-shadow: 0 0 0 3px rgba(201,160,68,.12); }
-.hero__scroll span, .hero__foot > a span { color: var(--gold); font-size: 13px; margin-left: 5px; }
+.hero__scroll, .hero__foot > a { display: inline-flex; align-items: center; gap: 6px; }
+.hero__scroll-icon, .hero__external-icon { width: 13px; height: 13px; color: var(--gold); }
+.hero__instagram-icon { width: 13px; height: 13px; }
 .hero__photo-note { position: absolute; right: 7.05%; bottom: 66px; margin: 0; color: rgba(241,238,232,.48); font-size: 7px; letter-spacing: .14em; }
 .intro-section { min-height: 275px; padding: 68px 12.5%; display: grid; grid-template-columns: .7fr 1.3fr; gap: 40px; border-top: 1px solid rgba(255,255,255,.07); background: radial-gradient(ellipse at 73% 0%, rgba(201,160,68,.06), transparent 53%), var(--surface); }
 .intro-section__eyebrow { padding-top: 9px; white-space: nowrap; }
@@ -80,7 +83,7 @@ button { font: inherit; }
 .intro-section__note span { display: block; margin-top: 5px; color: #77736a; font-size: 10px; }
 .whatsapp-float { position: fixed; z-index: 8; right: 22px; bottom: 21px; width: 53px; height: 53px; display: grid; place-items: center; border: 1px solid rgba(222,192,135,.65); border-radius: 50%; background: rgba(20,19,17,.95); color: var(--gold-bright); box-shadow: 0 8px 28px rgba(0,0,0,.4); transition: transform .2s ease, background .2s ease; }
 .whatsapp-float:hover { transform: translateY(-3px); background: #232019; }
-.whatsapp-float svg { width: 22px; fill: currentColor; }
+.whatsapp-float__icon { width: 22px; fill: currentColor; }
 .whatsapp-float.is-obscured { visibility: hidden; opacity: 0; pointer-events: none; transform: scale(.88); }
 
 .monthly-section { position: relative; overflow: hidden; padding: clamp(76px, 9vw, 130px) 7.05%; background: radial-gradient(ellipse at 8% 51%, rgba(255,255,255,.025), transparent 44%), #080808; isolation: isolate; }
@@ -103,7 +106,7 @@ button { font: inherit; }
 .monthly-card { position: relative; padding: 26px 30px 28px; border: 1px solid rgba(201,160,68,.4); background: linear-gradient(150deg, rgba(29,27,23,.96), rgba(13,13,12,.98) 72%); box-shadow: 0 22px 70px rgba(0,0,0,.28), inset 0 1px rgba(255,255,255,.035); }
 .monthly-card::before { position: absolute; top: -1px; left: 30px; width: 66px; height: 2px; background: var(--gold-bright); content: ""; box-shadow: 0 0 18px rgba(201,160,68,.42); }
 .monthly-card__topline { display: flex; align-items: center; justify-content: space-between; color: rgba(241,238,232,.44); font: 500 8px/1 var(--sans); letter-spacing: .2em; }
-.monthly-card__ornament { color: var(--gold); font-size: 14px; }
+.monthly-card__ornament { width: 14px; height: 14px; color: var(--gold); stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; }
 .monthly-card__name { margin: 21px 0 7px; color: var(--white); font: 500 17px/1.2 var(--display); letter-spacing: .015em; }
 .monthly-card__price { display: flex; align-items: baseline; margin: 0; color: var(--gold-bright); font: 600 clamp(51px, 5vw, 68px)/1 var(--display); letter-spacing: -.065em; }
 .monthly-card__price > span { margin-right: 8px; color: var(--gold); font: 500 19px/1 var(--sans); letter-spacing: 0; }
@@ -117,7 +120,7 @@ button { font: inherit; }
 .monthly-card__benefit strong { color: var(--white); font: 500 12px/1.4 var(--sans); }
 .monthly-card__benefit small { margin-top: 3px; color: rgba(241,238,232,.54); font: 400 10px/1.4 var(--sans); }
 .monthly-card__button { display: flex; min-height: 52px; align-items: center; justify-content: space-between; margin-top: 25px; padding: 0 18px; background: linear-gradient(115deg, #bd9341, #d7b667); color: #11100d; font: 700 10px/1 var(--sans); letter-spacing: .15em; transition: background .25s ease, transform .25s ease, box-shadow .25s ease; }
-.monthly-card__button span { font-size: 17px; }
+.monthly-card__arrow { width: 16px; height: 16px; }
 .monthly-card__button:hover { transform: translateY(-2px); background: #ead29a; box-shadow: 0 10px 30px rgba(201,160,68,.2); }
 
 .services-section { position: relative; padding: clamp(78px, 9vw, 124px) 7.05% clamp(88px, 10vw, 142px); border-top: 1px solid rgba(255,255,255,.06); background: radial-gradient(ellipse at 50% 0%, rgba(201,160,68,.055), transparent 43%), #101010; }
@@ -133,7 +136,7 @@ button { font: inherit; }
 .service-category__index { color: var(--gold); font: 500 9px/1 var(--sans); letter-spacing: .11em; }
 .service-category__heading h3 { min-width: 0; margin: 0; color: var(--white); font: 500 17px/1.3 var(--display); }
 .service-category__rule { height: 1px; flex: 1; background: linear-gradient(90deg, rgba(201,160,68,.3), rgba(201,160,68,.04)); }
-.service-category__mark { color: var(--gold-muted); font-size: 13px; }
+.service-category__mark { width: 13px; height: 13px; color: var(--gold-muted); stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; }
 .service-category__list { min-width: 0; margin: 14px 0 0; padding: 0; list-style: none; }
 .service-item { display: grid; grid-template-columns: minmax(0, 1fr) max-content minmax(178px, auto); align-items: center; gap: 16px; min-width: 0; margin: 0 -10px; padding: 12px 10px; border-bottom: 1px solid rgba(255,255,255,.075); transition: background .24s ease, border-color .24s ease; }
 .service-item:hover { background: rgba(201,160,68,.035); border-color: rgba(201,160,68,.17); }
@@ -177,14 +180,22 @@ button { font: inherit; }
 .location-card__icon svg, .location-card__hours-icon svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 1.35; stroke-linecap: round; stroke-linejoin: round; }
 .location-card__address address { color: rgba(241,238,232,.78); font: normal 400 12px/1.9 var(--sans); }
 .location-card__map-button { display: flex; width: min(100%, 320px); min-height: 48px; align-items: center; justify-content: space-between; padding: 0 15px; border: 1px solid rgba(201,160,68,.5); color: var(--gold-bright); font: 600 9px/1 var(--sans); letter-spacing: .15em; transition: background .22s ease, border-color .22s ease, color .22s ease, transform .22s ease; }
-.location-card__map-button span { font-size: 15px; }
+.location-card__map-icon { width: 15px; height: 15px; }
 .location-card__map-button:hover { transform: translateY(-1px); border-color: var(--gold); background: rgba(201,160,68,.1); color: #f2dfb6; }
 .location-card__contacts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; margin-top: 25px; }
 .location-card__contacts a { position: relative; display: flex; min-width: 0; min-height: 62px; flex-direction: column; justify-content: center; gap: 6px; padding: 10px 32px 10px 13px; border: 1px solid rgba(255,255,255,.08); transition: border-color .22s ease, background .22s ease; }
 .location-card__contacts a:hover { border-color: rgba(201,160,68,.38); background: rgba(201,160,68,.035); }
-.location-card__contacts a > span { color: rgba(241,238,232,.45); font: 500 7px/1 var(--sans); letter-spacing: .16em; }
+.location-card__contacts a > span { display: inline-flex; align-items: center; gap: 5px; color: rgba(241,238,232,.45); font: 500 7px/1 var(--sans); letter-spacing: .16em; }
+.location-card__contact-icon { width: 12px; height: 12px; flex: 0 0 auto; color: var(--gold); }
+.location-card__contacts a:first-child .location-card__contact-icon { fill: currentColor; }
+.location-card__contacts a:last-child .location-card__contact-icon { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.location-card__contacts a:last-child .icon-instagram__dot { fill: currentColor; stroke: none; }
 .location-card__contacts strong { overflow-wrap: anywhere; color: var(--white); font: 500 10px/1.35 var(--sans); }
-.location-card__contacts i { position: absolute; top: 50%; right: 12px; color: var(--gold); font: normal 14px/1 var(--sans); transform: translateY(-50%); }
+.location-card__contact-arrow { position: absolute; top: 50%; right: 12px; width: 14px; height: 14px; color: var(--gold); transform: translateY(-50%); }
+.site-nav__arrow, .site-nav__booking-icon, .site-nav__instagram, .button__arrow, .hero__secondary-icon, .hero__scroll-icon, .hero__instagram-icon, .hero__external-icon, .monthly-card__arrow, .location-card__map-icon, .location-card__contact-arrow { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; }
+.icon-instagram__dot { fill: currentColor; stroke: none; }
+.site-nav a:hover .site-nav__arrow, .site-nav__booking:hover .site-nav__booking-icon, .button:hover .button__arrow, .hero__foot > a:hover .hero__external-icon, .monthly-card__button:hover .monthly-card__arrow, .location-card__map-button:hover .location-card__map-icon { transform: translate(1px, -1px); }
+.location-card__contacts a:hover .location-card__contact-arrow { transform: translate(1px, calc(-50% - 1px)); }
 .location-card--hours { padding-top: clamp(30px, 4.4vw, 53px); background: linear-gradient(155deg, rgba(201,160,68,.035), rgba(255,255,255,.008) 42%); }
 .location-card__hours-title { margin: 0; color: var(--white); font: 500 clamp(26px, 2.8vw, 36px)/1.2 var(--display); letter-spacing: -.045em; }
 .location-card__hours-icon { position: absolute; top: clamp(28px, 4vw, 47px); right: clamp(27px, 4vw, 47px); }

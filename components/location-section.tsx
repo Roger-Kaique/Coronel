@@ -1,3 +1,5 @@
+import { ArrowUpRightIcon, InstagramIcon, WhatsAppIcon } from "@/components/icons";
+
 const address = "Avenida João Luiz Pinto, 691, Ribeirão das Neves - MG, CEP 32150-340";
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 const whatsappUrl = "https://wa.me/5531988624168";
@@ -49,19 +51,19 @@ export function LocationSection() {
           </div>
 
           <a className="location-card__map-button" href={mapsUrl} target="_blank" rel="noreferrer">
-            COMO CHEGAR <span aria-hidden="true">↗</span>
+            COMO CHEGAR <ArrowUpRightIcon className="location-card__map-icon" />
           </a>
 
           <div className="location-card__contacts" aria-label="Canais de contato">
             <a href={whatsappUrl} target="_blank" rel="noreferrer">
-              <span>WHATSAPP</span>
+              <span className="location-card__contact-label"><WhatsAppIcon className="location-card__contact-icon" /> WHATSAPP</span>
               <strong>(31) 98862-4168</strong>
-              <i aria-hidden="true">↗</i>
+              <ArrowUpRightIcon className="location-card__contact-arrow" />
             </a>
             <a href={instagramUrl} target="_blank" rel="noreferrer">
-              <span>INSTAGRAM</span>
+              <span className="location-card__contact-label"><InstagramIcon className="location-card__contact-icon" /> INSTAGRAM</span>
               <strong>@coroneldocorte_</strong>
-              <i aria-hidden="true">↗</i>
+              <ArrowUpRightIcon className="location-card__contact-arrow" />
             </a>
           </div>
         </div>

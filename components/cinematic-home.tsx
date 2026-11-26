@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ArrowDownIcon, ArrowUpRightIcon, InstagramIcon, WhatsAppIcon } from "@/components/icons";
 
 const WHATSAPP_NUMBER = "5531988624168";
 const WHATSAPP_MESSAGE =
@@ -263,8 +264,8 @@ export function CinematicHome({ sections }: { sections: ReactNode }) {
           <a href="#mensal" onClick={() => setMenuOpen(false)}>Plano mensal</a>
           <a href="#servicos" onClick={() => setMenuOpen(false)}>Serviços</a>
           <a href="#localizacao" onClick={() => setMenuOpen(false)}>Localização</a>
-          <a href="https://www.instagram.com/coroneldocorte_/" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Instagram <span className="site-nav__arrow">↗</span></a>
-          <a className="site-nav__booking" href={WHATSAPP_URL} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Agendar horário <span>↗</span></a>
+          <a href="https://www.instagram.com/coroneldocorte_/" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}><InstagramIcon className="site-nav__instagram" />Instagram <ArrowUpRightIcon className="site-nav__arrow" /></a>
+          <a className="site-nav__booking" href={WHATSAPP_URL} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Agendar horário <ArrowUpRightIcon className="site-nav__booking-icon" /></a>
         </nav>
       </header>
 
@@ -277,9 +278,9 @@ export function CinematicHome({ sections }: { sections: ReactNode }) {
           <p className="hero__copy">Mais que um corte, uma experiência.</p>
           <div className="hero__actions">
             <a className="button button--gold" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-              Agendar horário <span aria-hidden="true">↗</span>
+              Agendar horário <ArrowUpRightIcon className="button__arrow" />
             </a>
-            <a className="hero__secondary" href="#conceito">Conhecer a barbearia <span aria-hidden="true">↓</span></a>
+            <a className="hero__secondary" href="#conceito">Conhecer a barbearia <ArrowDownIcon className="hero__secondary-icon" /></a>
           </div>
         </div>
         <div className="hero__foot">
@@ -287,8 +288,8 @@ export function CinematicHome({ sections }: { sections: ReactNode }) {
             <span className="hero__pin" />
             <span className="hero__qualities-copy">AVENIDA JOÃO LUIZ PINTO, 691 · RIBEIRÃO DAS NEVES – MG · CEP 32150-340</span>
           </span>
-          <span className="hero__scroll">DESLIZE PARA EXPLORAR <span>↓</span></span>
-          <a href="https://www.instagram.com/coroneldocorte_/" target="_blank" rel="noreferrer">@CORONELDOCORTE_ <span>↗</span></a>
+          <span className="hero__scroll">DESLIZE PARA EXPLORAR <ArrowDownIcon className="hero__scroll-icon" /></span>
+          <a href="https://www.instagram.com/coroneldocorte_/" target="_blank" rel="noreferrer"><InstagramIcon className="hero__instagram-icon" />@CORONELDOCORTE_ <ArrowUpRightIcon className="hero__external-icon" /></a>
         </div>
         <p className="hero__photo-note">IMAGEM ILUSTRATIVA · UNSPLASH</p>
       </section>
@@ -296,7 +297,7 @@ export function CinematicHome({ sections }: { sections: ReactNode }) {
       {sections}
 
       <a className="whatsapp-float" href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="Agendar pelo WhatsApp">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6a11.8 11.8 0 0 0 14-18.4ZM12 21a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.5.9.9-3.4-.2-.4A9.8 9.8 0 1 1 12 21Zm5.4-7.3c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2c-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.6l-.9-2.2c-.2-.6-.5-.5-.7-.5H7.4c-.3 0-.6.1-.9.4-1 1-1.4 2.2-.8 3.7 1.5 3.8 4.3 6.2 8.3 7.5 2.2.7 3.7.6 5-.1.7-.5 1.2-1.5 1.4-2.1.2-.6.2-1.1.1-1.2s-.3-.3-.6-.4Z" /></svg>
+        <WhatsAppIcon className="whatsapp-float__icon" />
       </a>
     </main>
   );
